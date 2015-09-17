@@ -1,5 +1,5 @@
 # rvjf-blender-plugin
-This is a plugin for blender, it adds videos listed in a json file.
+This is a plugin for blender, it add videos listed in a json file.
 
 given the json object:
 
