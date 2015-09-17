@@ -52,13 +52,13 @@ class rvfjPanel(bpy.types.Panel):
         
         row = layout.row()
         
-        #Display information about selected directory       
+        #Display information about the selected directory       
         if directory == "":
             row.label(text = "Choose a directory")
         else:
             #Check if it is a path
             if os.path.exists(os.path.dirname(directory)):
-                #Print information about the path 
+                
                 compatible_files = ('.json')
                 
                 file_list = []
@@ -69,14 +69,12 @@ class rvfjPanel(bpy.types.Panel):
             else:
                 row.label(text = "Invalid Path")
         
-        #Sorting methods
         row = layout.row()
         
-        #Crossfade options
         layout.separator()
         row = layout.row()
         
-        #Other options
+        #options
         split = layout.split()
         col = split.column(align = True)
         col.prop(context.scene, "rvfj_clear_sequencer")
@@ -115,7 +113,7 @@ class rvfj(bpy.types.Operator):
         strips = []
         
         for strip in file_list:
-            strips.append(os.path.join(path, strip)) #if is a video or image the full path way should be configured using os.path.join
+            strips.append(os.path.join(path, strip)) #if you prefer to ref. the full pathway to videos, the full pathway should be configured using strips.append(ostrip) strip only.
 
         #Add the strips
         bpy.context.area.type = 'SEQUENCE_EDITOR'
@@ -131,7 +129,7 @@ class rvfj(bpy.types.Operator):
             channel_offset += 1
             #offset = startPoint[i]
             bpy.ops.sequencer.movie_strip_add(filepath = strips[i], frame_start = startPoint[i], channel = channel_offset)
-            #Make into meta strip if json or video
+            #Make into meta strip
             bpy.ops.sequencer.meta_make()
             
             #Rename for easy selecting
