@@ -1,6 +1,6 @@
 """
 rvfj Plugin
-Creative Commons 2015 Danilo Abreu (danhdds)
+Creative Commons 2015 Danilo Abreu (danhdds) +33 06 02 72 73 27 
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
